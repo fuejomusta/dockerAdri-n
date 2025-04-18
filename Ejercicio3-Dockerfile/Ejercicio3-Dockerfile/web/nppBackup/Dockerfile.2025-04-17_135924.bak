@@ -1,0 +1,13 @@
+# Usar la imagen oficial de PHP 7.4 con Apache
+FROM php:7.4-apache
+
+# Copiar los archivos del sitio web al directorio del servidor
+COPY index.html /var/www/html/
+COPY styles.css /var/www/html/
+COPY fecha.php /var/www/html/
+
+# Exponer el puerto 80 (puerto por defecto de Apache)
+EXPOSE 80
+
+# Comando para iniciar Apache en primer plano
+CMD ["apache2-foreground"]

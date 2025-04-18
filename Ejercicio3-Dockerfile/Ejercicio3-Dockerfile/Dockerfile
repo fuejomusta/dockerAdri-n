@@ -1,0 +1,8 @@
+# Usar la imagen base de PHP con Apache
+FROM php:7.4-apache
+
+# Copia el contenido de la carpeta ./web/
+COPY ./web/ /var/www/html/
+
+# Ejecuta dos comandos dentro del contenedor
+RUN chown -R www-data:www-data /var/www/html && chmod -R 755 /var/www/html
